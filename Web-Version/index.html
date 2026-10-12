@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Live world clock dashboard inspired by time.is with searchable cities and timezone tracking."
+    />
+    <title>TIME.IS Style Clock</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div class="brand" id="brandName">ಸಮಯದರ್ಶಿ</div>
+
+        <div class="header-actions">
+          <form class="search-wrap" id="timezoneSearchForm" role="search">
+            <label for="timezoneSearch" class="sr-only">Search for a city or timezone</label>
+            <input
+              id="timezoneSearch"
+              type="text"
+              list="timezoneOptions"
+              placeholder="Search city or timezone..."
+              aria-label="Search city or timezone"
+            />
+            <datalist id="timezoneOptions"></datalist>
+            <button class="search-submit" type="submit" aria-label="Search city or timezone">🔍</button>
+          </form>
+
+          <div class="language-switcher" aria-label="Language selector">
+            <button type="button" class="lang-btn active" data-lang="en">EN</button>
+            <button type="button" class="lang-btn" data-lang="hi">HI</button>
+            <button type="button" class="lang-btn" data-lang="kn">KN</button>
+            <button type="button" class="lang-btn" data-lang="ta">TA</button>
+            <button type="button" class="lang-btn" data-lang="te">TE</button>
+            <button type="button" class="lang-btn" data-lang="bn">BN</button>
+            <button type="button" class="lang-btn" data-lang="mr">MR</button>
+            <button type="button" class="lang-btn" data-lang="gu">GU</button>
+          </div>
+
+          <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle theme">
+            <span class="toggle-icon">☀️</span>
+            <span class="toggle-label">Light</span>
+          </button>
+        </div>
+      </header>
+
+      <main class="hero-section">
+        <p class="sync-message" id="syncMessage" data-i18n="syncMessage">Device time is updating live.</p>
+        <p class="location-line">
+          <span data-i18n="accuracyPrefix">Local time in</span>
+          <strong id="mainLocation">Bengaluru</strong>
+          <span data-i18n="accuracySuffix">now:</span>
+        </p>
+
+        <div class="exact-time-tag" data-i18n="exactNow">Local time · Bengaluru</div>
+        <div class="time-display-row">
+          <div class="main-time" id="mainTime">00:49:21</div>
+
+          <section class="clock-widget" aria-label="Live clock widget">
+            <div class="widget-date">
+              <span id="widgetWeekday">Thursday</span>
+              <strong id="widgetDate">February 28</strong>
+            </div>
+            <div class="widget-clock" aria-hidden="true">
+              <svg class="widget-rings" viewBox="0 0 220 220">
+                <circle class="ring-track ring-track-outer" cx="110" cy="110" r="91"></circle>
+                <circle class="ring-progress ring-progress-outer" id="widgetMinuteRing" cx="110" cy="110" r="91"></circle>
+                <circle class="ring-track ring-track-inner" cx="110" cy="110" r="81"></circle>
+                <circle class="ring-progress ring-progress-inner" id="widgetSecondRing" cx="110" cy="110" r="81"></circle>
+                <circle class="ring-dot" id="widgetSecondDot" cx="110" cy="29" r="4"></circle>
+              </svg>
+              <span class="widget-time" id="widgetTime">15:39</span>
+            </div>
+          </section>
+        </div>
+
+        <div class="date-line">
+          <span id="mainDate">Tuesday, 13 October, 2026, week 42</span>
+          <span id="mainOffset">Sun: +06:09 · 18:03 (11h 55m)</span>
+        </div>
+
+        <div class="favorite-row" id="favoriteCities" aria-live="polite"></div>
+      </main>
+
+      <section class="timezone-strip" aria-label="Timezone list">
+        <button class="zone-tag" type="button" data-timezone="Etc/UTC" aria-pressed="false">UTC</button>
+        <button class="zone-tag" type="button" data-timezone="Etc/GMT" aria-pressed="false">GMT</button>
+        <button class="zone-tag" type="button" data-timezone="Europe/Paris" aria-pressed="false">CET</button>
+        <button class="zone-tag" type="button" data-timezone="America/Los_Angeles" aria-pressed="false">Pacific Time</button>
+        <button class="zone-tag" type="button" data-timezone="America/Denver" aria-pressed="false">Mountain Time</button>
+        <button class="zone-tag" type="button" data-timezone="America/Chicago" aria-pressed="false">Central Time</button>
+        <button class="zone-tag" type="button" data-timezone="America/New_York" aria-pressed="false">Eastern Time</button>
+        <button class="zone-tag" type="button" data-timezone="Asia/Shanghai" aria-pressed="false">China Standard Time</button>
+        <button class="zone-tag" type="button" data-timezone="Asia/Kolkata" aria-pressed="false">India Standard Time</button>
+      </section>
+
+      <section class="city-grid" id="cityGrid" aria-live="polite"></section>
+
+      <section class="quote-banner" aria-label="Quote banner">
+        <blockquote>
+          "You have the right to work, but never to the fruit of work."
+        </blockquote>
+        <cite>Bhagavad Gita 2:47</cite>
+      </section>
+
+      <footer class="site-footer">
+        <p class="creator-credit">Made By Sourabh Kulkarni <span class="glowing-heart" aria-label="with love">&#9829;</span></p>
+      </footer>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
