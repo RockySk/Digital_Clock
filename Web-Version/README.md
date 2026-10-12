@@ -14,7 +14,7 @@ A responsive, static world-clock dashboard built with HTML, CSS, and vanilla Jav
 
 ## Screenshot
 
-![Full-page screenshot of the World Clock web version](screenshots/web-clock.png)
+![Updated full-page screenshot of the World Clock web version showing 01:57](screenshots/web-clock-updated.png)
 
 ## Requirements
 
@@ -48,6 +48,6 @@ Web-Version/
 |-- app.js
 |-- styles.css
 |-- screenshots/
-|   `-- web-clock.png
+|   `-- web-clock-updated.png
 `-- README.md
 ```
