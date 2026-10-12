@@ -67,6 +67,8 @@ Since it is a plain HTML/CSS/JS project, deployment is simple and does not requi
 
 ## Python Desktop Version
 
+![Python desktop clock running in dark theme](screenshots/python-clock.png)
+
 Python 3.9 or later is required. On Windows, install the IANA time-zone database package used by `zoneinfo`:
 
 ```powershell

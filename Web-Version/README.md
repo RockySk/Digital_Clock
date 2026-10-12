@@ -12,6 +12,10 @@ A responsive, static world-clock dashboard built with HTML, CSS, and vanilla Jav
 - Light and dark themes
 - Responsive layout for phones, tablets, and desktops
 
+## Screenshot
+
+![Full-page screenshot of the World Clock web version](screenshots/web-clock.png)
+
 ## Requirements
 
 - A modern browser with `Intl.DateTimeFormat` time-zone support
@@ -43,5 +47,7 @@ Web-Version/
 |-- index.html
 |-- app.js
 |-- styles.css
+|-- screenshots/
+|   `-- web-clock.png
 `-- README.md
 ```
